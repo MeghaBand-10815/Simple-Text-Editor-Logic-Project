@@ -1,0 +1,44 @@
+class Document{
+    private StringBuffer textBuffer;
+
+    Document(){
+        textBuffer =new StringBuffer();
+    }
+
+    void addText(String input){
+        textBuffer.append(input);
+    }
+
+    void clearText(){
+        textBuffer.setLength(0);
+    }
+
+    void reverseText(){
+        textBuffer.reverse();
+    }
+
+    void deletetext(int start, int end){
+        textBuffer.delete(start,end);
+    }
+
+    void displayText(){
+        System.out.println(textBuffer);
+    }
+
+    public static void main(String[] args){
+        Document doc=new Document();
+        System.out.println("Adding Text: Hello");
+        doc.addText("Hello");
+        doc.displayText();
+
+        System.out.println("Reversing Text:");
+        doc.reverseText();
+        doc.displayText();
+
+        System.out.println("Clearing Text:");
+        doc.clearText();
+        doc.displayText();
+    }
+
+}
+
