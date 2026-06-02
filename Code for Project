@@ -14,11 +14,11 @@ class Document{
     }
 
     void reverseText(){
-        textBuffer.reverse();
+        textBuffer.reverse();                    
     }
 
     void deletetext(int start, int end){
-        textBuffer.delete(start,end);
+        textBuffer.delete(start,end);   
     }
 
     void displayText(){
