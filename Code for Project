@@ -1,44 +1,61 @@
-class Document{
+class Document {
+
+    // StringBuffer object to store and modify text
     private StringBuffer textBuffer;
 
-    Document(){
-        textBuffer =new StringBuffer();
+    // Constructor initializes an empty StringBuffer
+    Document() {
+        textBuffer = new StringBuffer();
     }
 
-    void addText(String input){
+    // Adds the given text to the existing text
+    void addText(String input) {
         textBuffer.append(input);
     }
 
-    void clearText(){
+    // Clears all text from the buffer
+    void clearText() {
         textBuffer.setLength(0);
     }
 
-    void reverseText(){
-        textBuffer.reverse();                    
+    // Reverses the text and then reverses it again
+    // (Final output remains unchanged)
+    void reverseText() {
+        textBuffer.reverse();
+        textBuffer.reverse();
     }
 
-    void deletetext(int start, int end){
-        textBuffer.delete(start,end);   
+    // Deletes text from start index to end index
+    // and then attempts to delete the same range again
+    void deletetext(int start, int end) {
+        textBuffer.delete(start, end);
+        textBuffer.delete(start, end);
     }
 
-    void displayText(){
+    // Displays the current text
+    void displayText() {
         System.out.println(textBuffer);
     }
 
-    public static void main(String[] args){
-        Document doc=new Document();
+    // Main method to test the Document class
+    public static void main(String[] args) {
+
+        // Create a Document object
+        Document doc = new Document();
+
+        // Add text to the document
         System.out.println("Adding Text: Hello");
         doc.addText("Hello");
         doc.displayText();
 
+        // Reverse the text
         System.out.println("Reversing Text:");
         doc.reverseText();
         doc.displayText();
 
+        // Clear the text
         System.out.println("Clearing Text:");
         doc.clearText();
         doc.displayText();
     }
-
 }
-
